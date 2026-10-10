@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Cliente - Luan Avila</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header do Cliente */
+        .cliente-header {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-bottom: 3px solid #3b82f6;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .cliente-nome {
+            font-size: 28px;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 8px;
+        }
+
+        .cliente-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .cliente-info span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* KPIs */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .kpi-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .kpi-label {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .kpi-valor {
+            font-size: 26px;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+
+        .kpi-valor.verde {
+            color: #10b981;
+        }
+
+        /* Seções */
+        .secao {
+            margin-bottom: 32px;
+        }
+
+        .secao-titulo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3b82f6;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .secao-titulo .count {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Cards de Itens */
+        .item-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .item-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .item-titulo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .item-detalhe {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .item-valor {
+            text-align: right;
+        }
+
+        .item-valor-principal {
+            font-size: 16px;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 4px;
+        }
+
+        .item-valor-secundario {
+            font-size: 13px;
+            color: #10b981;
+        }
+
+        .item-valor-secundario.vermelho {
+            color: #ef4444;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: #64748b;
+            font-size: 12px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+
+        .footer strong {
+            color: #3b82f6;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+
+            .cliente-nome {
+                font-size: 22px;
+            }
+
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .item-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-valor {
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header do Cliente -->
+        <div class="cliente-header">
+            <div class="cliente-nome">Luan Avila</div>
+            <div class="cliente-info">
+                
+            </div>
+        </div>
+
+        <!-- KPIs -->
+        <div class="kpi-grid">
+            
+                <div class="kpi-card">
+                    <div class="kpi-label">✈️ Vôos</div>
+                    <div class="kpi-valor ">0</div>
+                </div>
+            
+                <div class="kpi-card">
+                    <div class="kpi-label">💎 Valor de Mercado</div>
+                    <div class="kpi-valor ">R$ 0,00</div>
+                </div>
+            
+                <div class="kpi-card">
+                    <div class="kpi-label">💰 Economia</div>
+                    <div class="kpi-valor verde">R$ 0,00</div>
+                </div>
+            
+                <div class="kpi-card">
+                    <div class="kpi-label">📊 % Economia</div>
+                    <div class="kpi-valor ">0.0%</div>
+                </div>
+            
+        </div>
+
+        <!-- Seções -->
+        
+                <div class="secao">
+                    <div class="secao-titulo">🎯 Programas de Fidelidade (6)</div>
+                    
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">UAU Caixa</div>
+                    <div class="item-detalhe">Última atualização: 01/10/2026 | 10.351 milhas | +10.341</div>
+                </div>
+                <div class="item-valor"><div class="item-valor-principal ">10.351 milhas</div></div>
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Sicoob</div>
+                    <div class="item-detalhe">Última atualização: 01/10/2026 | 39.099 milhas</div>
+                </div>
+                <div class="item-valor"><div class="item-valor-principal ">39.099 milhas</div></div>
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Coopera</div>
+                    <div class="item-detalhe">Última atualização: 01/10/2026 | 48.943 milhas</div>
+                </div>
+                <div class="item-valor"><div class="item-valor-principal ">48.943 milhas</div></div>
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Ailos</div>
+                    <div class="item-detalhe">Última atualização: 01/10/2026 | 0 milhas</div>
+                </div>
+                <div class="item-valor"><div class="item-valor-principal ">0 milhas</div></div>
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Livelo</div>
+                    <div class="item-detalhe">Última atualização: 01/10/2026 | 30.000 milhas</div>
+                </div>
+                <div class="item-valor"><div class="item-valor-principal ">30.000 milhas</div></div>
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">XP</div>
+                    <div class="item-detalhe">Última atualização: 01/10/2026 | 0 milhas</div>
+                </div>
+                <div class="item-valor"><div class="item-valor-principal ">0 milhas</div></div>
+            </div>
+        
+                </div>
+            
+                <div class="secao">
+                    <div class="secao-titulo">💳 Cartões (9)</div>
+                    
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Visa</div>
+                    <div class="item-detalhe">Sicoob • Sicoob PF | Limite: R$&nbsp;0,00</div>
+                </div>
+                
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Visa</div>
+                    <div class="item-detalhe">Sicoob • Sicoob PJ (SCA) | Limite: R$&nbsp;200.000,00</div>
+                </div>
+                
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Visa</div>
+                    <div class="item-detalhe">Sicoob • Sicoob PJ (SAPE) | Limite: R$&nbsp;9.000,00</div>
+                </div>
+                
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Visa</div>
+                    <div class="item-detalhe">Sicredi • Sicredi PJ | Limite: R$&nbsp;80.000,00</div>
+                </div>
+                
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Visa</div>
+                    <div class="item-detalhe">Sicredi • Sicredi PF | Limite: R$&nbsp;80.000,00</div>
+                </div>
+                
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Visa</div>
+                    <div class="item-detalhe">Ailos • Transpocredi PJ | Limite: R$&nbsp;120.000,00</div>
+                </div>
+                
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Visa</div>
+                    <div class="item-detalhe">Bradesco • Bradesco PJ | Limite: R$&nbsp;133.000,00</div>
+                </div>
+                
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Visa</div>
+                    <div class="item-detalhe">XP • XP PF | Limite: R$&nbsp;0,00</div>
+                </div>
+                
+            </div>
+        
+            <div class="item-card">
+                <div class="item-info">
+                    <div class="item-titulo">Visa</div>
+                    <div class="item-detalhe">Caixa • Caixa PJ | Limite: R$&nbsp;50.000,00</div>
+                </div>
+                
+            </div>
+        
+                </div>
+            
+                <div class="secao">
+                    <div class="secao-titulo">✈️ Emissões (0)</div>
+                    <div class="item-card"><div class="item-info"><div class="item-titulo">Nenhuma emissão registrada.</div></div></div>
+                </div>
+            
+                <div class="secao">
+                    <div class="secao-titulo">🧳 Viagens (0)</div>
+                    <div class="item-card"><div class="item-info"><div class="item-titulo">Nenhuma viagem registrada.</div></div></div>
+                </div>
+            
+
+        <!-- Footer -->
+        <div class="footer">
+            Portal do Cliente gerado em <strong>10/10/2026, 17:03</strong><br>
+            CRM WDIH - Gestão de Milhas e Viagens
+        </div>
+    </div>
+</body>
+</html>
